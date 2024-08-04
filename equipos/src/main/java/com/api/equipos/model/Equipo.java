@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Equipo {
@@ -11,8 +13,11 @@ public class Equipo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
+	@NotNull
 	private String nombre;
+	@NotBlank(message = "Debe ingresar un valor")
 	private String liga;
+	@NotBlank(message = "Debe ingresar un valor")
 	private String pais;
 	
 
