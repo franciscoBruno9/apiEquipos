@@ -25,6 +25,17 @@ public class EquipoService {
 	}
 	
 	public Equipo altaEquipo(Equipo equipo) {
+		/*
+		 * if (equipo.getNombre() == null || equipo.getLiga() == null ||
+		 * equipo.getPais() == null) { throw new
+		 * NullPointerException("No se permiten valores nulos"); } if
+		 * (equipo.getNombre().trim().isEmpty()) { throw new
+		 * IllegalArgumentException("El nombre del equipo no puede estar vacío"); } if
+		 * (equipo.getLiga().trim().isEmpty()) { throw new
+		 * IllegalArgumentException("La liga del equipo no puede estar vacía"); } if
+		 * (equipo.getPais().trim().isEmpty()) { throw new
+		 * IllegalArgumentException("El país del equipo no puede estar vacío"); }
+		 */
 	    return iEquipoRepository.save(equipo);
 	}
 	
@@ -41,9 +52,15 @@ public class EquipoService {
 	
 	public Equipo actualizarEquipo(Integer id, Equipo equipo) {
         Equipo equipoActual = iEquipoRepository.findById(id).get();
-        equipoActual.setNombre(equipo.getNombre());
-        equipoActual.setLiga(equipo.getLiga());
-        equipoActual.setPais(equipo.getPais());
+        if (equipo.getNombre() != null) {
+            equipoActual.setNombre(equipo.getNombre());
+        }
+        if (equipo.getLiga() != null) {
+            equipoActual.setLiga(equipo.getLiga());
+        }
+        if (equipo.getPais() != null) {
+            equipoActual.setPais(equipo.getPais());
+        }
         return iEquipoRepository.save(equipoActual);
     }
 
