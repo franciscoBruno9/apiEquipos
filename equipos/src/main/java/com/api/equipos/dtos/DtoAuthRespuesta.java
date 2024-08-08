@@ -2,10 +2,10 @@ package com.api.equipos.dtos;
 
 
 public class DtoAuthRespuesta {
-    private String accessToken;
+    private String token;
 
-    public DtoAuthRespuesta(String accessToken) {
-        this.accessToken = accessToken;
+    public DtoAuthRespuesta(String token) {
+        this.token = token;
     }
 
 	public DtoAuthRespuesta() {
@@ -14,12 +14,12 @@ public class DtoAuthRespuesta {
 	}
 
 
-	public String getAccessToken() {
-		return accessToken;
+	public String getToken() {
+		return token;
 	}
 
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
+	public void setToken(String token) {
+		this.token = token;
 	}
     
     

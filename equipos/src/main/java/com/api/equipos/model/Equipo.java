@@ -11,19 +11,14 @@ import jakarta.validation.constraints.NotNull;
 public class Equipo {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@NotNull
 	private String nombre;
-	@NotBlank(message = "Debe ingresar un valor")
 	private String liga;
-	@NotBlank(message = "Debe ingresar un valor")
 	private String pais;
 	
 
-	public Equipo(Integer id, String nombre, String liga, String pais) {
-		super();
-		this.id = id;
+	public Equipo(String nombre, String liga, String pais) {
 		this.nombre = nombre;
 		this.liga = liga;
 		this.pais = pais;
